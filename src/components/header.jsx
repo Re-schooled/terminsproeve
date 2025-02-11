@@ -1,11 +1,11 @@
-import { IoSearch, IoHomeOutline } from "react-icons/io5";
+import Image from "next/image"
 
-
-export default function Footer() {
-    Footer = () => {
+export default function Header() {
     return (
-        <header className="fixed bottom-0 h-20 flex bg-white w-full">
+        <header className="fixed w-full">
+            <div className="mt-32">
+            <Image src="/images/Logo.png" alt="Landrup Dans Header Logo" width={400} height={600}/>
+            </div>
         </header>
     )
-}
 }

@@ -1,5 +1,6 @@
-import Footer from "src/components/footer";
+// import Footer from "src/components/Footer";
 import "./globals.css";
+import ClientLayout from "../components/ClientLayout";
 
 export const metadata = {
   title: {
@@ -13,10 +14,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="da">
       <body
-        className="antialiased"
-      >
-        {children}
-        <Footer/>
+        className="antialiased">
+      <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
