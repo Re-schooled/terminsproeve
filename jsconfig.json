@@ -5,7 +5,8 @@
       "@/styles/*": ["src/styles/*"],
       "@/components/*": ["src/components/*"],
       "@/actions/*": ["src/actions/*"],
-      "@lib/*": ["src/lib/*"]
+      "@lib/*": ["src/lib/*"],
+      "@app/*": ["src/app/*"]
 
     }
   }

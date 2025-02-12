@@ -7,6 +7,9 @@
 :root {
   --font-primary: 'Ubuntu', sans-serif;
   --font-secondary: 'Roboto';
+}
+
+:root {
   --color-light-gray: '#EAEAEA';
   --color-dark-purple: '#5E2E53';
   --color-light-purple: '#E1A1E9';

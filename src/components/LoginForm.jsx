@@ -22,8 +22,8 @@ export default function LoginForm() {
 				<label className="block">
 					<input
 						defaultValue={formState?.formData?.username}
-						type="username"
-						name="brugernavn"
+						type="text"
+						name="username"
 						className="border w-full p-2 rounded-md bg-white text-gray-500" 
 						placeholder="brugernavn"
 						/>
@@ -36,7 +36,7 @@ export default function LoginForm() {
 					<input
 						defaultValue={formState?.formData?.password}
 						type="password"
-						name="kodeord"
+						name="password"
 						className="border w-full p-2 rounded-md bg-white text-gray-500" 
 						placeholder="adgangskode"
 						/>

@@ -55,7 +55,7 @@ export default async function Login(prevState, formData) {
 
 		const cookieStore = await cookies()
 		cookieStore.set("termin_token", data.token, { maxAge: 60 * 60 * 24 })
-		cookieStore.set("termin_bruger_uid", data.userId.id, { maxAge: 60 * 60 * 24 })
+		cookieStore.set("termin_bruger_uid", data.userId, { maxAge: 60 * 60 * 24 })
 	} catch (error) {
 		throw new Error(error)
 	}

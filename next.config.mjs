@@ -1,4 +1,19 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images: {
+        remotePatterns: [
+          {
+            protocol: 'http',
+            hostname: 'localhost',
+            port: '4000',
+            pathname: '/file-bucket/**',
+          },
+        ],
+    },
+};
 
 export default nextConfig;
+
+
+
+// https://nextjs.org/docs/messages/next-image-unconfigured-host

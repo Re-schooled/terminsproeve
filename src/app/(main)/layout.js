@@ -1,7 +1,7 @@
 export default function MainLayout({ children }) {
 	return (
 		<>
-		<section>
+		<section className="bg-[var(--color-dark-purple)]">
 			{children}
 			</section>
 		</>
