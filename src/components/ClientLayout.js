@@ -6,12 +6,14 @@ import Footer from "./Footer"
 
 export default function ClientLayout({ children }) {
     const pathname = usePathname();
-    const isSpecialPage = pathname === "/" || pathname === "/login";
+    const removeFooterHeaderfromPages = pathname === "/" || pathname === "/login";
 
     return (
         <>
         <main>{children}</main>
-        {!isSpecialPage && <Footer />}
+        {!removeFooterHeaderfromPages && <Footer />}
         </>
     );
 }
+
+// usePathname er sejt B-)

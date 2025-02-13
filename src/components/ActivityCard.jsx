@@ -19,5 +19,3 @@ export default function ActivityCard ({name, image, minAge, maxAge}) {
         </article>
     )
 }
-
-// props skal ændres til API stuff.

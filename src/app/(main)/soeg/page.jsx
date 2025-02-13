@@ -1,13 +1,12 @@
-// brugt postman til fetch af activites for at se JSON format GET request
-
 "use client"
 import { getActivities } from "@/actions/activites"
 import { useEffect, useState } from "react"
 import ActivityList from "@/components/ActivityList";
+import SearchBar from "@/components/SearchBar";
 
-
-export default function ActivitiesPage() {
+export default function SearchPage() {
     const [activities, setActivities] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("")
 
     useEffect(() => {
         async function fetchData() {
@@ -20,11 +19,16 @@ export default function ActivitiesPage() {
         fetchData();
     },[]);
 
+    const filteredActivities = activities.filter(activity => 
+        activity.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+
 // find ud af hvorfor den ikke virker med globals.css LØST! det var ''
     return (
 <section className="min-h-screen p-6 bg-[#5E2E53] mb-20">
-    <h1 className="mb-6 font-bold text-xl text-white">Aktiviteter</h1>
-        <ActivityList activities={activities} />
+    <h1 className="mb-6 font-bold text-xl text-white">Søg</h1>
+        <SearchBar onSearch={setSearchTerm} />
+        <ActivityList activities={activities && filteredActivities} />
 </section>
     )
 }
