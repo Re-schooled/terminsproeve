@@ -59,7 +59,7 @@ export default async function Login(prevState, formData) {
 	} catch (error) {
 		throw new Error(error)
 	}
-    redirect("/")
+    redirect("/activities")
 }
 
 

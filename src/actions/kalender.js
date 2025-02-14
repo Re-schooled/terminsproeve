@@ -11,7 +11,7 @@ export async function getUserCalendar() {
 }
 
 export async function getInstructorCalendar() {
-    const cookieStore = cookies()
+    const cookieStore = await cookies()
     const token = cookieStore.get("termin_token")?.value
     const userId = cookieStore.get("termin_bruger_uid")?.value
 

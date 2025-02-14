@@ -1,6 +1,6 @@
 "use client"
 
-import { getActivity } from "@/actions/activites"
+import { getActivity, joinActivity, leaveActivity } from "@/actions/activites"
 import { useParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import Image from "next/image"
@@ -10,6 +10,7 @@ export default function ActivityPage() {
     const {id} = useParams()
     const [activity, setActivity] = useState (null)
     const [loading, setLoading] = useState(true)
+    const [isParticipating, setIsParticipating] = useState(false)
 
     useEffect(() => {
         async function fetchData() {
@@ -19,6 +20,19 @@ export default function ActivityPage() {
         }
         fetchData()
     }, [id])
+
+    // async function handleJoin() {
+    //     await joinActivity(id)
+    //     setIsParticipating(true)
+    // }
+
+    // async function handleLeave() {
+    //     await leaveActivity(id)
+    //     setIsParticipating(false)
+    // }
+
+
+
     if (loading) return <p>igang</p>
     if (!activity) return <p>Ikke fundet :| </p>
     
@@ -34,7 +48,12 @@ export default function ActivityPage() {
                 className="w-full h-full object-cover"
             />
 
-            <button className="absolute bg-[var(--color-dark-purple)] text-white left-[45%] rounded-lg bottom-8 w-2/4 p-3 shadow-md">Tilmeld</button>
+            <button className="absolute bottom-5 left-1/2 p-3 rounded-lg shadow-mw w-2/4 bg-[var(--color-dark-purple)] text-white">tilmeld</button>
+            
+
+{/* <button onClick={isParticipating ? handleLeave : handleJoin} className={`absolute bottom-5 left-1/2 p-3 rounded-lg shadow-md w-2/4  ${isParticipating ? "bg-red-600 text-white" : "bg-[var(--color-dark-purple)] text-[var(--color-light-gray)]"}`}>
+            {isParticipating ? "Afmeld" : "Tilmeld"}
+            </button> */}
             </div>
             <article className="w-full text-white">
             <h1 className="text-lg mt-5">{activity.name}</h1>
